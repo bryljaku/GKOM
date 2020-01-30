@@ -85,6 +85,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Cone.cpp" />
     <ClCompile Include="gl_05.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -105,6 +106,7 @@
   <ItemGroup>
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Compound.h" />
+    <ClInclude Include="Cone.h" />
     <ClInclude Include="Constants.h" />
     <ClInclude Include="Crane.h" />
     <ClInclude Include="CraneTop.h" />

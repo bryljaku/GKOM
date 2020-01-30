@@ -15,7 +15,7 @@ using namespace std;
 #include "Cube.h"
 #include "Crane.h"
 #include "TextureHandler.h"
-
+#include "Cone.h"
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode)
 {
 	// cout << key << endl;
@@ -117,7 +117,8 @@ int main()
 		Cube ground("gravel.jpg", 50);
 		ground.scale(glm::vec3(100.0f, 1.0f, 100.0f));
 		ground.move(glm::vec3(0.0f, -0.5f, 0.0f)); // podloga jest dokladnie na y = 0.0
-
+		Cone cone(GREY);
+		cone.move(glm::vec3(0.0f, 3.0f, 0.0f));
 		// Cube
 		Cube cube(YELLOW);
 		cube.move(glm::vec3(10.0f, -3.0f, 5.0f));
@@ -168,6 +169,7 @@ int main()
 			glUniformMatrix4fv(glGetUniformLocation(colorShaders.get_programID(), "projection"), 1, GL_FALSE, &projection[0][0]);
 			cube.draw(colorShaders.get_programID(), camera);
 			crane.draw(colorShaders.get_programID(), camera);
+			cone.draw(colorShaders.get_programID(), camera);
 
 			skybox.draw(camera.getProjectionMatrix(), camera.getViewMatrix());
 			glfwPollEvents();
